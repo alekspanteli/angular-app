@@ -10,7 +10,7 @@
   <p>{{ product().description }}</p>
   <p>Product part {{ product().category }}</p>
   <p>Avaialable Inventory: {{ availableInvetory() }}</p>
-  <p class="font-bold" [class]="product().discount > 0 ? 'line-through text-red-600' : ''">
+  <p class="font-bold" [class]="getPriceClass(product().discount)">
     {{ product().price | currency }}
   </p>
   @if (product().discount > 0) {

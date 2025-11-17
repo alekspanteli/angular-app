@@ -16,6 +16,10 @@ export class ProductDetails {
     return `/images/robot-parts/${image}`;
   }
 
+  getPriceClass(discount: number): string {
+    return discount > 0 ? 'line-through text-red-600' : 'text-green-600';
+  }
+
   addToCart(event: Event) {
     setTimeout(() => {
       this.availableInvetory.update(value => value - 1);

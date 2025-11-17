@@ -1,10 +1,10 @@
-<article class="border-2 border-gray-300 rounded-md p-5">
+<article class="border-2 border-gray-300 rounded-md p-5 h-full">
   <img
     [ngSrc]="getImageUrl(product().image)"
     [alt]="product().name"
     width="400"
     height="400"
-    class="rounded-md mb-5 w-full h-full object-cover"
+    class="rounded-md mb-5 w-full object-cover"
   />
   <h2 class="text-2xl font-bold mb-2">{{ product().name }}</h2>
   <p>{{ product().description }}</p>
@@ -12,13 +12,11 @@
   <p>Avaialable Inventory: {{ availableInvetory() }}</p>
   <p class="font-bold" [class.line-through]="product().discount > 0">{{ product().price | currency }}</p>
   @if (product().discount > 0) {
-  <p class="mb-2">
-    <span class="text-green-600 font-bold">{{
-      product().price * (1 - product().discount) | currency
-    }}</span>
+  <p class="text-green-600 font-bold">
+    {{ product().price * (1 - product().discount) | currency}}
   </p>
   }
-  <button (click)="addToCart($event)" class="bg-blue-500 text-white p-2 rounded-md cursor-pointer">
+  <button (click)="addToCart($event)" class="bg-blue-500 text-white p-2 rounded-md cursor-pointer mt-2">
     Buy Product
   </button>
 </article>

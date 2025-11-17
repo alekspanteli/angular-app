@@ -8,5 +8,5 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrl: './product-details.css',
 })
 export class ProductDetails {
-
+ 
 }

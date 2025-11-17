@@ -10,10 +10,14 @@
   <p>{{ product().description }}</p>
   <p>Product part {{ product().category }}</p>
   <p>Avaialable Inventory: {{ availableInvetory() }}</p>
+  <p class="font-bold" [class.line-through]="product().discount > 0">{{ product().price | currency }}</p>
   @if (product().discount > 0) {
-  <p class="text-green-500 font-bold">Discount: {{ product().discount * 100 }}%</p>
+  <p class="mb-2">
+    <span class="text-green-600 font-bold">{{
+      product().price * (1 - product().discount) | currency
+    }}</span>
+  </p>
   }
-  <p class="mb-2">{{ product().price | currency }}</p>
   <button (click)="addToCart($event)" class="bg-blue-500 text-white p-2 rounded-md cursor-pointer">
     Buy Product
   </button>

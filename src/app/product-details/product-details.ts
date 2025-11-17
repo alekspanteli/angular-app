@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
 import { Product } from '../models/product.model';
 
@@ -9,26 +9,17 @@ import { Product } from '../models/product.model';
   styleUrl: './product-details.css',
 })
 export class ProductDetails {
-  product: Product;
-
-  constructor() {
-    this.product = {
-      id: '1',
-      name: 'Product 1',
-      description: 'Product 1 description',
-      price: 100,
-      image: 'robot-arm-left.avif',
-      category: 'Robot Parts',
-      discount: 0.1,
-    };
-  }
+  product = input.required<Product>();
+  availableInvetory = signal(10);
 
   getImageUrl(image: string): string {
     return `/images/robot-parts/${image}`;
   }
 
-  addToCart(product: Product, event: Event) {
-    product.name += ' - added to cart';
+  addToCart(event: Event) {
+    setTimeout(() => {
+      this.availableInvetory.update(value => value - 1);
+    }, 100);
     console.log(event);
   }
 }

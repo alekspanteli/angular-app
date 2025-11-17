@@ -1,8 +1,7 @@
 <ul class="space-y-5">
-    <li>
-        <app-product-details/>
-    </li>
-    <li>
-        <app-product-details/>
-    </li>
+  @for (product of products; track product.id) {
+  <li>
+    <app-product-details [product]="product" />
+  </li>
+  }
 </ul>

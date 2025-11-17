@@ -10,5 +10,7 @@
   <p>{{ product.description }}</p>
   <p>Product part {{ product.category }}</p>
   <p class="mb-2">{{ product.price | currency }}</p>
-  <button class="bg-blue-500 text-white p-2 rounded-md cursor-pointer">Buy Product</button>
+  <button (click)="addToCart(product, $event)" class="bg-blue-500 text-white p-2 rounded-md cursor-pointer">
+    Buy Product
+  </button>
 </article>

@@ -26,4 +26,9 @@ export class ProductDetails {
   getImageUrl(image: string): string {
     return `/images/robot-parts/${image}`;
   }
+
+  addToCart(product: Product, event: Event) {
+    product.name += ' - added to cart';
+    console.log(event);
+  }
 }

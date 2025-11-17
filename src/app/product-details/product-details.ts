@@ -17,7 +17,7 @@ export class ProductDetails {
   }
 
   getPriceClass(discount: number): string {
-    return discount > 0 ? 'line-through text-red-600' : 'text-green-600';
+    return discount > 0 ? 'line-through text-red-600' : '';
   }
 
   addToCart(event: Event) {

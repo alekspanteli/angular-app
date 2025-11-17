@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Catalog } from './catalog/catalog';
+import { Catalog } from "./catalog/catalog";
 
 @Component({
   selector: 'app-root',

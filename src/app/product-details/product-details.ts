@@ -16,13 +16,13 @@ export class ProductDetails {
     return `/images/robot-parts/${image}`;
   }
 
-  getPriceClass(discount: number): string {
-    return discount > 0 ? 'line-through text-red-600' : '';
+  getPriceClass() {
+    return this.product().discount > 0 ? 'line-through text-red-600' : '';
   }
 
   addToCart(event: Event) {
     setTimeout(() => {
-      this.availableInvetory.update(value => value - 1);
+      this.availableInvetory.update((value) => value - 1);
     }, 100);
     console.log(event);
   }

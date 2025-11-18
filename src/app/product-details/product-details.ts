@@ -7,6 +7,9 @@ import { Product } from '../models/product.model';
   imports: [NgOptimizedImage, CurrencyPipe],
   templateUrl: './product-details.html',
   styleUrl: './product-details.css',
+  host: {
+    class: 'border-2 border-gray-300 rounded-md p-5 h-full block',
+  },
 })
 export class ProductDetails {
   product = input.required<Product>();
